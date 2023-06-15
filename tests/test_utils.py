@@ -1,4 +1,5 @@
-from src.utils import converts_date_format, masks_card_number, masks_account_number, loads_from_file, filters_the_list
+from src.utils import converts_date_format, masks_card_number, masks_account_number, loads_from_file, filters_the_list, \
+    sorts_the_list
 
 
 def test_converts_date_format():
@@ -17,3 +18,7 @@ def test_masks_account_number():
 def test_filters_the_list():
     assert filters_the_list([{"date": "2018-02-13", "state": "EXECUTED"}, {}, {"date": "2018-02-13", "state": "CANCELED"}]) ==\
            [{"date": "2018-02-13", "state": "EXECUTED"}]
+
+def test_sorts_the_list():
+    assert sorts_the_list([{"date": "2018-02-13"}, {"date": "2018-02-23"}]) ==\
+           [{"date": "2018-02-23"}, {"date": "2018-02-13"}]
