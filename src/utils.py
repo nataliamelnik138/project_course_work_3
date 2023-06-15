@@ -47,3 +47,18 @@ def masks_card_number(number_card):
                         masked_card_number += element[index]
 
     return masked_card_number
+
+
+def masks_account_number(account_number):
+    """
+    Маскирует номер счета
+    :param account_number: исходные название и номер счета
+    в формате "Счет 10848359769870775355"
+    :return: название и замаскированный номер счета в формате "Счет **5355"
+    """
+    masked_account_number = ""
+    account_number_lst = account_number.split()
+    masked_account_number += account_number_lst[0]
+    masked_account_number += " **" + account_number_lst[1][-4:]
+
+    return masked_account_number
