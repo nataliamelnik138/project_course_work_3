@@ -62,3 +62,11 @@ def masks_account_number(account_number):
     masked_account_number += " **" + account_number_lst[1][-4:]
 
     return masked_account_number
+
+def filters_the_list(all_operations):
+    operations = []
+    for operation in all_operations:
+        if operation.get("date") != None and operation.get("state") == "EXECUTED":
+            operations.append(operation)
+
+    return operations
