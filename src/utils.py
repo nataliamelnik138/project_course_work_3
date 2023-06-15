@@ -64,6 +64,11 @@ def masks_account_number(account_number):
     return masked_account_number
 
 def filters_the_list(all_operations):
+    """
+    Фильтрует список операций
+    :param all_operations: исходный список
+    :return: список, содержащий только выполненные операции
+    """
     operations = []
     for operation in all_operations:
         if operation.get("date") != None and operation.get("state") == "EXECUTED":
@@ -72,6 +77,11 @@ def filters_the_list(all_operations):
     return operations
 
 def sorts_the_list(operations):
+    """
+    Сортирует список операций по дате выполнения
+    :param operations: список операций
+    :return: отсортированный по убыванию даты выполнения список
+    """
     operations_sort = sorted(operations, key=lambda d: d['date'], reverse=True)
     return operations_sort
 
