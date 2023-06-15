@@ -70,3 +70,8 @@ def filters_the_list(all_operations):
             operations.append(operation)
 
     return operations
+
+def sorts_the_list(operations):
+    operations_sort = sorted(operations, key=lambda d: d['date'], reverse=True)
+    return operations_sort
+
